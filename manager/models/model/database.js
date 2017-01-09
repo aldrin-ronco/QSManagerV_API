@@ -1,0 +1,39 @@
+module.exports = function (sequelize, DataTypes) {
+  return sequelize.define('database',{
+    id:{
+      type:DataTypes.STRING,
+      allowNull:false,
+      primaryKey:true,
+      autoIncrement:true,
+      validate:{
+        notEmpty:true
+      }
+    },
+    name:{
+      type:DataTypes.STRING,
+      allowNull:false,
+      defaultValue:'',
+      validate:{
+        notEmpty:true
+      }
+    },
+    description:{
+      type:DataTypes.STRING,
+      allowNull:false,
+      defaultValue:'',
+      validate:{
+        notEmpty:true
+      }
+    },
+    host_id:{
+      type:DataTypes.INTEGER,
+      allowNull:true,
+      validate:{
+        notEmpty:false
+      }
+    }
+  },
+  {
+      tableName:'database'
+  })
+};
