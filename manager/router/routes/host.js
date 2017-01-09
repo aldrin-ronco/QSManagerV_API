@@ -5,6 +5,16 @@ var express = require('express');
 var router = express.Router();
 var db = require('../../models/index');
 
+router.route('/')
+// FindAll
+.get(function (req, res) {
+    db.sequelize.models['host'].findAll({order:['description']}).then(function (itemList) {
+        res.json({hosts: itemList});
+    }, function (error) {
+        res.status(500).json({status: 'error', error: error});
+    })
+})
+
 router.route('/hosts')
 // FindAll
 .get(function (req, res) {
