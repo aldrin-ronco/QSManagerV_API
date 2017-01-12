@@ -33,6 +33,16 @@ router.route('/hosts')
   })
 })
 
+router.route('/host/domain')
+.get(function (req, res){
+  let domain = req.query.q;
+  db.sequelize.models['host'].findAll({where: {domain:domain}}).then(function (item) {
+      res.json({host: item});
+  }, function (error) {
+      res.status(500).json({status: 'error', error: error})
+  })
+})
+
 router.route('/host/search')
     // Search by data provided
     .get(function(req, res){
