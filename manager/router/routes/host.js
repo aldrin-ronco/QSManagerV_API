@@ -10,6 +10,11 @@ router.route('/')
 .get(function (req, res) {
     db.sequelize.models['host'].findAll({order:['description']}).then(function (itemList) {
         res.json({hosts: itemList});
+        //res.redirect(301,"http://localhost:4200/login");
+        //console.log("http://localhost:4200/index?user=sa");
+        //res.redirect(301,"http://localhost:4200/?user=sa");
+        //res.redirect(301,"https://qsmanager.herokuapp.com/index?user=sa");
+
     }, function (error) {
         res.status(500).json({status: 'error', error: error});
     })
@@ -74,7 +79,7 @@ router.route('/hosts/:id')
     })
     // Update
     .put(function (req, res) {
-      console.log(req.body.host);
+      //console.log(req.body.host);
         db.sequelize.models['host'].find({where: {id: req.params.id}}).then(function (itemFound) {
             itemFound.updateAttributes(req.body.host).then(function (itemUpdated) {
                 res.status(200).json({host: itemUpdated});
