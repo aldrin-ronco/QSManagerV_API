@@ -8,25 +8,22 @@ module.exports = function(sequelize, DataTypes) {
                 type:DataTypes.INTEGER,
                 allowNull:false,
                 primaryKey:true,
-                autoIncrement:true,
-                validate:{
-                    notEmpty:true
-                }    
+                autoIncrement:true
             },
             host : {
                 type:DataTypes.STRING,
                 allowNull:false,
                 defaultValue:'',
-                validate:{
-                    notEmpty:true
-                } 
-            },         
-            username : {
+                validate : {
+                  notEmpty : false
+                }
+            },
+            userName : {
                 type : DataTypes.STRING,
                 allowNull:false,
                 defaultValue:'',
-                validate:{
-                    notEmpty:true
+                validate : {
+                  notEmpty : false
                 }
             },
             pwd : {
@@ -34,26 +31,26 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull : false,
                 defaultValue : '',
                 validate : {
-                   notEmpty : true     
-                }    
+                  notEmpty : false
+                }
             },
-            description : { 
+            description : {
                 type: DataTypes.STRING,
                 allowNull : false,
                 defaultValue : '',
                 validate : {
-                    notEmpty : true
-                }            
+                  notEmpty : false
+                }
             },
-            domain : { 
+            domain : {
                 type: DataTypes.STRING,
                 allowNull : false,
                 defaultValue : '',
                 validate : {
-                    notEmpty : true
-                }            
-            }                                          
-        },        
+                  notEmpty : false
+                }
+            }
+        },
         {
             tableName : 'host'
         })

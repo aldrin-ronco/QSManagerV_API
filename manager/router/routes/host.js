@@ -31,10 +31,11 @@ router.route('/hosts')
 })
 // Create
 .post(function (req, res) {
+  console.log('post node',req.body.host);
   db.sequelize.models['host'].create(req.body.host).then(function (itemSaved) {
     res.status(200).json({host: itemSaved});
   }, function (error) {
-    res.status(500).json({status: 'error', error: error});
+    res.status(500).json({"status": 'error', "error": error});
   })
 })
 
@@ -79,7 +80,7 @@ router.route('/hosts/:id')
     })
     // Update
     .put(function (req, res) {
-      //console.log(req.body.host);
+       console.log(req.body.host);
         db.sequelize.models['host'].find({where: {id: req.params.id}}).then(function (itemFound) {
             itemFound.updateAttributes(req.body.host).then(function (itemUpdated) {
                 res.status(200).json({host: itemUpdated});
