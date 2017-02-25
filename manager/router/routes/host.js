@@ -31,7 +31,7 @@ router.route('/hosts')
 })
 // Create
 .post(function (req, res) {
-  console.log('post node',req.body.host);
+  //console.log('post node',req.body.host);
   db.sequelize.models['host'].create(req.body.host).then(function (itemSaved) {
     res.status(200).json({host: itemSaved});
   }, function (error) {
