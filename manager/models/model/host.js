@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull:false,
                 defaultValue:'',
                 validate : {
-                  notEmpty : false
+                  notEmpty : true
                 }
             },
             userName : {
@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull:false,
                 defaultValue:'',
                 validate : {
-                  notEmpty : false
+                  notEmpty : true
                 }
             },
             pwd : {
@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull : false,
                 defaultValue : '',
                 validate : {
-                  notEmpty : false
+                  notEmpty : true
                 }
             },
             description : {
@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull : false,
                 defaultValue : '',
                 validate : {
-                  notEmpty : false
+                  notEmpty : true
                 }
             },
             domain : {
@@ -47,8 +47,13 @@ module.exports = function(sequelize, DataTypes) {
                 allowNull : false,
                 defaultValue : '',
                 validate : {
-                  notEmpty : false
+                  notEmpty : true
                 }
+            },
+            companyLogo : {
+              type: DataTypes.STRING,
+              allowNull: false,
+              defaultValue: ''
             }
         },
         {
