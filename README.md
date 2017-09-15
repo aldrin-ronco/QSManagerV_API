@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README #
 
 API para aplicación de host diseñado en node js (Reemplazado por API en GoLang)
@@ -27,3 +28,6 @@ API para aplicación de host diseñado en node js (Reemplazado por API en GoLang
 
 * Repo owner or admin
 * Other community or team contact
+=======
+# QSManagerV_API
+>>>>>>> dc9e35118d6302b811dda3669ed8e676a1146137
