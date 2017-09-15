@@ -39,10 +39,11 @@ router.route('/hosts')
   })
 })
 
+// By Domain
 router.route('/hosts/domain')
 .get(function (req, res){
   let domain = req.query.q;
-  db.sequelize.models['host'].findAll({where: {domain:domain}}).then(function (item) {
+  db.sequelize.models['host'].findOne({where: {domain:domain}}).then(function (item) {
       res.json({host: item});
   }, function (error) {
       res.status(500).json({status: 'error', error: error})
@@ -80,7 +81,7 @@ router.route('/hosts/:id')
     })
     // Update
     .put(function (req, res) {
-       console.log(req.body.host);
+       // console.log(req.body.host);
         db.sequelize.models['host'].find({where: {id: req.params.id}}).then(function (itemFound) {
             itemFound.updateAttributes(req.body.host).then(function (itemUpdated) {
                 res.status(200).json({host: itemUpdated});
