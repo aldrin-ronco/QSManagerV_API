@@ -13,7 +13,7 @@ router.route('/auth')
       if (item) {
         res.json({host: item});
       } else {
-        res.json({host: null});
+        res.json({host: {}});
       }
   }, function (error) {
       res.status(500).json({status: 'error', error: error})
