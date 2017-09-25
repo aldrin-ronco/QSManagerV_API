@@ -11,9 +11,9 @@ router.route('/auth')
   let secret = req.query.secret;
   db.sequelize.models['host'].findOne({where: {domain:domain}}).then(function (item) {
       if (item) {
-        res.json({logged: true});
+        res.json({host: item});
       } else {
-        res.json({logged: false});
+        res.json({host: null});
       }
   }, function (error) {
       res.status(500).json({status: 'error', error: error})
