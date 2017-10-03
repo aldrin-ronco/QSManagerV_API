@@ -54,6 +54,14 @@ module.exports = function(sequelize, DataTypes) {
               type: DataTypes.STRING,
               allowNull: false,
               defaultValue: ''
+            },
+            port : {
+              type : DataTypes.INTEGER,
+              allowNull: false,
+              defaultValue: 1433,
+              validate : {
+                notEmpty : true
+              }
             }
         },
         {
