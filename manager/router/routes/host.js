@@ -59,8 +59,8 @@ router.route('/host/search')
                 $or:{
                     domain:{$like:`%${query}%`},
                     description:{$like:`%${query}%`},
-                    host:{$like:`%${query}%`},
-                    username:{$like:`%${query}%`}
+                    ip:{$like:`%${query}%`},
+                    sql_user_name:{$like:`%${query}%`}
                 }
             }
         }).then(function(itemList){

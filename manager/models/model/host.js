@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
                 primaryKey:true,
                 autoIncrement:true
             },
-            host : {
+            ip : {
                 type:DataTypes.STRING,
                 allowNull:false,
                 defaultValue:'',
@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
                   notEmpty : true
                 }
             },
-            userName : {
+            sql_user_name : {
                 type : DataTypes.STRING,
                 allowNull:false,
                 defaultValue:'',
@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
                   notEmpty : true
                 }
             },
-            pwd : {
+            sql_pwd : {
                 type : DataTypes.STRING,
                 allowNull : false,
                 defaultValue : '',
@@ -50,7 +50,7 @@ module.exports = function(sequelize, DataTypes) {
                   notEmpty : true
                 }
             },
-            companyLogo : {
+            company_logo : {
               type: DataTypes.STRING,
               allowNull: false,
               defaultValue: ''
